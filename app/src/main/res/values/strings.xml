@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Reviews and Ratings</string>
+    <string name="reviews_ratings"><![CDATA[Reviews & Ratings]]></string>
+    <string name="_1087_reviews"><u>1087 reviews</u></string>
+    <string name="dummy_food_image">Dummy food Image</string>
+    <string name="recommended_dishes">Recommended Dishes</string>
+</resources>

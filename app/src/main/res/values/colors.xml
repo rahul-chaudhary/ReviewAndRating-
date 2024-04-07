@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray">#808080</color> <!-- Medium Gray -->
+    <color name="light_gray">#D3D3D3</color> <!-- Light Gray -->
+    <color name="dark_gray">#A9A9A9</color> <!-- Dark Gray -->
+    <color name="yellow">#B1B108</color>
+    <color name="gold">#FFD700</color>
+    <color name="green">#038803</color>
+</resources>
