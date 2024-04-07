@@ -10,10 +10,12 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/card"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
         android:backgroundTint="@color/white"
         app:cardCornerRadius="10dp"
+        android:hapticFeedbackEnabled="true"
+        android:elevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -79,6 +81,7 @@
                         android:layout_gravity="center"
                         >
                         <TextView
+                            android:id="@+id/reviewerRating"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/poppins_medium"
@@ -108,11 +111,11 @@
                 android:id="@+id/timeAgo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="5dp"
+                android:layout_marginHorizontal="0dp"
                 android:fontFamily="@font/poppins_regular"
                 android:text="1 week ago"
                 android:textColor="@color/gray"
-                android:textSize="14sp" />
+                android:textSize="13sp" />
 
             <LinearLayout
                 android:id="@+id/tags"
@@ -125,18 +128,33 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="5dp"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/gray"
+                    app:chipStrokeColor="@color/light_gray"
+                    app:chipStrokeWidth="1dp"
                     android:text="Latest" />
 
                 <com.google.android.material.chip.Chip
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="5dp"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/gray"
+                    app:chipStrokeColor="@color/light_gray"
+                    app:chipStrokeWidth="1dp"
                     android:text="With Photos" />
 
                 <com.google.android.material.chip.Chip
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="5dp"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/gray"
+                    app:chipStrokeColor="@color/light_gray"
+                    app:chipStrokeWidth="1dp"
                     android:text="Verified" />
 
             </LinearLayout>
@@ -159,7 +177,6 @@
                 <ImageView
                     android:layout_width="150dp"
                     android:layout_height="100dp"
-
                     android:scaleType="centerCrop"
                     android:src="@drawable/food2"
                     android:layout_marginHorizontal="5dp"
@@ -168,6 +185,7 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/reviewTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
@@ -176,11 +194,13 @@
                 android:text="@string/recommended_dishes"/>
 
             <TextView
+                android:id="@+id/reviewBody"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_medium"
+                android:fontFamily="@font/poppins_regular"
                 android:textSize="13sp"
                 android:textColor="@color/gray"
+                android:layout_marginVertical="5dp"
                 android:text="Honey chilli potato, Lasagna"/>
 
         </LinearLayout>

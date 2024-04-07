@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.reviewsandratings.R
 
-class RatingCircularPBarAdapter(val items: ArrayList<String>, val itemsTitle: ArrayList<String>): RecyclerView.Adapter<RatingCircularPBarViewHolder>() {
+class RatingCircularPBarAdapter(val items: ArrayList<Double>, val itemsTitle: ArrayList<String>): RecyclerView.Adapter<RatingCircularPBarViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -23,7 +23,7 @@ class RatingCircularPBarAdapter(val items: ArrayList<String>, val itemsTitle: Ar
     override fun onBindViewHolder(holder: RatingCircularPBarViewHolder, position: Int) {
         val currentItem = items[position]
         val currentItem2 = itemsTitle[position]
-        holder.ratingValueView.text = currentItem
+        holder.ratingValueView.text = currentItem.toString()
         holder.ratingTitleView.text = currentItem2
     }
 }
