@@ -2,7 +2,7 @@ package com.example.reviewsandratings
 
 import com.example.reviewsandratings.models.ReviewCardModel
 
-object dummyData {
+object DummyReviewData {
     val ratingMap: HashMap<String, Double> = hashMapOf(
         "Ambience" to 4.5,
         "Service" to 3.5,
@@ -60,6 +60,17 @@ object dummyData {
             arrayListOf("Ambience")
         )
     )
+
+    val tags: ArrayList<String> = arrayListOf(
+        "Ambience",
+        "Service",
+        "Food",
+        "Price",
+        "Cleanliness",
+        "Taste",
+        "Variety"
+    )
+
 
     /*
      val reviewerName : String,

@@ -121,50 +121,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider">
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip1"
-            style="@style/Widget.Material3.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="5dp"
-            android:backgroundTint="@color/white"
-            android:text="Filters"
-            android:textColor="@color/dark_gray"
-            app:chipStrokeColor="@color/orange"
-            app:chipStrokeWidth="1dp" />
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/filterChipsRecyclerView"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
 
-        <com.google.android.material.chip.Chip
-            style="@style/Widget.Material3.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="5dp"
-            android:backgroundTint="@color/white"
-            android:text="Latest"
-            android:textColor="@color/dark_gray"
-            app:chipStrokeColor="@color/orange"
-            app:chipStrokeWidth="1dp" />
-
-        <com.google.android.material.chip.Chip
-            style="@style/Widget.Material3.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="5dp"
-            android:backgroundTint="@color/white"
-            android:text="With Photos"
-            android:textColor="@color/dark_gray"
-            app:chipStrokeColor="@color/orange"
-            app:chipStrokeWidth="1dp" />
-
-        <com.google.android.material.chip.Chip
-            style="@style/Widget.Material3.Chip.Filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="5dp"
-            android:backgroundTint="@color/white"
-            android:text="Verified"
-            android:textColor="@color/dark_gray"
-            app:chipStrokeColor="@color/orange"
-            app:chipStrokeWidth="1dp" />
+       </androidx.recyclerview.widget.RecyclerView>
 
     </LinearLayout>
 

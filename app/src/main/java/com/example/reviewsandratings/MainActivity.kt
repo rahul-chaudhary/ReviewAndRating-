@@ -6,8 +6,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.reviewsandratings.adapters.RatingCircularPBarAdapter
 import com.example.reviewsandratings.adapters.ReviewCardAdapter
 import com.example.reviewsandratings.databinding.ActivityMainBinding
-import com.example.reviewsandratings.dummyData.ratingMap
-import com.example.reviewsandratings.dummyData.reviewCardList
+import com.example.reviewsandratings.DummyReviewData.ratingMap
+import com.example.reviewsandratings.DummyReviewData.reviewCardList
+import com.example.reviewsandratings.DummyReviewData.tags
+import com.example.reviewsandratings.adapters.FilterChipsAdapter
 import com.example.reviewsandratings.models.ReviewCardModel
 
 class MainActivity : AppCompatActivity() {
@@ -27,15 +29,20 @@ class MainActivity : AppCompatActivity() {
 
         //Card Data
         val reviewCardRecyclerView = mbinding.reviewsCardsRecyclerView
-        reviewCardRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        reviewCardRecyclerView.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         val nameItem = fetchNameValueData()
         val reviewCardAdapter = ReviewCardAdapter(nameItem)
         reviewCardRecyclerView.adapter = reviewCardAdapter
 
-        //chips
-        mbinding.chip1.setOnClickListener {
+        //Filter Chips Recyclerview
+        val filterChipsRecyclerview = mbinding.filterChipsRecyclerView
+        filterChipsRecyclerview.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        val tagsItem = fetchTags()
+        val filterChipsAdapter = FilterChipsAdapter(tagsItem)
+        filterChipsRecyclerview.adapter = filterChipsAdapter
 
-        }
     }
 
     private fun fetchRatingValueData(): ArrayList<Double> {
@@ -48,10 +55,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun fetchNameValueData(): ArrayList<ReviewCardModel> {
         return reviewCardList
-//        val list = ArrayList<String>()
-//        for (i in 'a' until 'k') {
-//            list.add("Mr. AB$i Bhattacharya")
-//        }
-//        return list
+    }
+
+    private fun fetchTags(): ArrayList<String> {
+        return tags
     }
 }
