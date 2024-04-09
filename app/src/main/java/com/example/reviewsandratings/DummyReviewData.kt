@@ -1,5 +1,7 @@
 package com.example.reviewsandratings
 
+import com.example.reviewsandratings.adapters.ReviewCardAdapter
+import com.example.reviewsandratings.adapters.getFilteredTags
 import com.example.reviewsandratings.models.ReviewCardModel
 
 object DummyReviewData {
@@ -21,7 +23,7 @@ object DummyReviewData {
             "Great Food",
             "Delicious dishes with excellent flavors. Must try!",
             "4.7",
-            arrayListOf("Ambience")
+            arrayListOf("Ambience", "Price")
         ),
         ReviewCardModel(
             "Mr. Bill Withers",
@@ -30,7 +32,7 @@ object DummyReviewData {
             "Cozy Ambience",
             "Warm atmosphere, perfect for a relaxing meal with friends.",
             "4.3",
-            arrayListOf("Service")
+            arrayListOf("Service", "Cleanliness")
         ),
         ReviewCardModel(
             "Mr. Johnny Cash",
@@ -39,7 +41,7 @@ object DummyReviewData {
             "Friendly Staff",
             "Attentive service and helpful staff made the dining experience enjoyable.",
             "4.5",
-            arrayListOf("Food")
+            arrayListOf("Food", "Variety")
         ),
         ReviewCardModel(
             "Mr. John Denver",
@@ -48,7 +50,7 @@ object DummyReviewData {
             "Lovely Setting",
             "Charming decor and beautiful surroundings created a delightful dining ambiance.",
             "4.5",
-            arrayListOf("Ambience", "Service", "Food")
+            arrayListOf("Ambience", "Taste", "Service")
         ),
         ReviewCardModel(
             "Mr. Paul Anka",
@@ -57,7 +59,7 @@ object DummyReviewData {
             "Tasty Treats",
             "Mouthwatering menu items that satisfied every craving.",
             "3.9",
-            arrayListOf("Ambience")
+            arrayListOf("Price", "Cleanliness")
         )
     )
 
@@ -70,15 +72,12 @@ object DummyReviewData {
         "Taste",
         "Variety"
     )
+    val filteredTags = getFilteredTags() // Get the filtered tags
 
-
-    /*
-     val reviewerName : String,
-val reviewerProfileImageURL: String,
-val reviewDate: String,
-val reviewTitle: String,
-val reviewDescription: String,
-val reviewRating: String,
-val reviewFilterTags: ArrayList<String>
-    */
+    // Filter the reviewCardList based on filteredTags
+    val filteredReviewCardList = reviewCardList.filter { reviewCard ->
+        reviewCard.reviewFilterTags.any { tag ->
+            filteredTags.contains(tag)
+        }
+    }
 }

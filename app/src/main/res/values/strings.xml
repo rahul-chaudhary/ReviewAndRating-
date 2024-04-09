@@ -5,4 +5,5 @@
     <string name="dummy_food_image">Dummy food Image</string>
     <string name="recommended_dishes">Recommended Dishes</string>
     <string name="filters">Filters</string>
+    <string name="tag">Tag</string>
 </resources>

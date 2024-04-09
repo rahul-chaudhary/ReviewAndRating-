@@ -3,6 +3,7 @@ package com.example.reviewsandratings
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.reviewsandratings.DummyReviewData.filteredReviewCardList
 import com.example.reviewsandratings.adapters.RatingCircularPBarAdapter
 import com.example.reviewsandratings.adapters.ReviewCardAdapter
 import com.example.reviewsandratings.databinding.ActivityMainBinding
@@ -14,10 +15,12 @@ import com.example.reviewsandratings.models.ReviewCardModel
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mbinding: ActivityMainBinding
+//    private lateinit var Tagbinding: =
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mbinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mbinding.root)
+
         //Rating Progress Bar Data
         val progressRecyclerView = mbinding.ratingCircularProgressRecyclerView
         progressRecyclerView.layoutManager =
@@ -31,19 +34,27 @@ class MainActivity : AppCompatActivity() {
         val reviewCardRecyclerView = mbinding.reviewsCardsRecyclerView
         reviewCardRecyclerView.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        val nameItem = fetchNameValueData()
-        val reviewCardAdapter = ReviewCardAdapter(nameItem)
+        val reviewCardList = fetchCardData()
+        val reviewCardAdapter = ReviewCardAdapter(reviewCardList)
         reviewCardRecyclerView.adapter = reviewCardAdapter
+
+
 
         //Filter Chips Recyclerview
         val filterChipsRecyclerview = mbinding.filterChipsRecyclerView
         filterChipsRecyclerview.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         val tagsItem = fetchTags()
-        val filterChipsAdapter = FilterChipsAdapter(tagsItem)
+        val filterChipsAdapter = FilterChipsAdapter(tagsItem, reviewCardAdapter)
         filterChipsRecyclerview.adapter = filterChipsAdapter
 
+
+
+
     }
+
+
+
 
     private fun fetchRatingValueData(): ArrayList<Double> {
         return ArrayList(ratingMap.values)
@@ -53,11 +64,21 @@ class MainActivity : AppCompatActivity() {
         return ArrayList(ratingMap.keys)
     }
 
-    private fun fetchNameValueData(): ArrayList<ReviewCardModel> {
-        return reviewCardList
-    }
+    //fetch card data from DummyReviewData for review cards recyclerview/adapter
+    private fun fetchCardData(): ArrayList<ReviewCardModel> {
+        return if(filteredReviewCardList.isEmpty()){
+            reviewCardList
+        } else {
+            ArrayList(filteredReviewCardList)
+        }
 
+    }
+    //fetch tags from DummyReviewData for filter chips recyclerview/adapter
     private fun fetchTags(): ArrayList<String> {
         return tags
+    }
+    //fetches the tags list for ReviewCards
+    private fun fetchFilteredTags(): ArrayList<ReviewCardModel> {
+        return reviewCardList
     }
 }
