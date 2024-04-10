@@ -31,20 +31,32 @@ class FilterChipsAdapter(
         val tag = tags[position]
         holder.filterChipView.text = tag
 
+        var isSelected = false
         // Set click listener for chip selection/deselection
         holder.filterChipView.setOnClickListener { chip ->
+            if(isSelected) {
+                holder.filterChipView.setChipBackgroundColorResource(R.color.white)
+                isSelected = false
+            }
+            else {
+                holder.filterChipView.setChipBackgroundColorResource(R.color.orange)
+                isSelected = true
+            }
+
+
+//                holder.filterChipView.setChipBackgroundColorResource(R.color.white)
+
             val chipText = holder.filterChipView.text.toString()
             if (selectedChips.contains(chipText)) {
                 selectedChips.remove(chipText)
                 selectedTags = selectedChips
-                // Update UI or data based on deselection (optional)
+
                 Log.d("FilterChipsAdapter", "Removed '$chipText' filter. New ArrayList: $selectedChips")
                 Toast.makeText(chip.context, "Removed '$chipText' filter", Toast.LENGTH_SHORT).show()
                 updateReviewCardAdapter()
             } else {
                 selectedChips.add(chipText)
                 selectedTags = selectedChips
-                // Update UI or data based on selection (optional)
                 Log.d("FilterChipsAdapter", "Added '$chipText' filter. New ArrayList: $selectedChips")
                 Toast.makeText(chip.context, "Added '$chipText' filter", Toast.LENGTH_SHORT).show()
                 updateReviewCardAdapter()
