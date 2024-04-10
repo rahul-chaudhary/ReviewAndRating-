@@ -1,7 +1,7 @@
 package com.example.reviewsandratings
 
+import android.util.Log
 import com.example.reviewsandratings.adapters.ReviewCardAdapter
-import com.example.reviewsandratings.adapters.getFilteredTags
 import com.example.reviewsandratings.models.ReviewCardModel
 
 object DummyReviewData {
@@ -72,12 +72,19 @@ object DummyReviewData {
         "Taste",
         "Variety"
     )
-    val filteredTags = getFilteredTags() // Get the filtered tags
 
-    // Filter the reviewCardList based on filteredTags
-    val filteredReviewCardList = reviewCardList.filter { reviewCard ->
-        reviewCard.reviewFilterTags.any { tag ->
-            filteredTags.contains(tag)
+    var selectedTags = arrayListOf<String>()
+    fun getFilteredReviewCardList(): ArrayList<ReviewCardModel> {
+        val filteredReviewCardList = ArrayList<ReviewCardModel>()
+        for (reviewCard in reviewCardList) {
+            if (reviewCard.reviewFilterTags.containsAll(selectedTags)) {
+                filteredReviewCardList.add(reviewCard)
+            }
         }
+        Log.d("DummyReviewData", "Filtered Review Card List: $filteredReviewCardList")
+        return filteredReviewCardList
     }
+
+//    val filteredReviewCardList = getFilteredReviewCardList()
+
 }

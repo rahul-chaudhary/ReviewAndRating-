@@ -5,7 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.reviewsandratings.R
-import com.example.reviewsandratings.models.ReviewCardModel
 import com.google.android.material.chip.Chip
 
 class TagChipsAdapter(private val items: ArrayList<String>): RecyclerView.Adapter<TagChipsViewHolder>() {

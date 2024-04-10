@@ -1,13 +1,11 @@
 package com.example.reviewsandratings.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.reviewsandratings.R
 import com.example.reviewsandratings.models.ReviewCardModel
 
@@ -29,7 +27,6 @@ class ReviewCardAdapter(private val items: ArrayList<ReviewCardModel>) : Recycle
         holder.reviewBodyView.text = items[position].reviewDescription
         holder.reviewRatingView.text = items[position].reviewRating
         holder.tagChipRecyclerView.layoutManager = LinearLayoutManager(holder.itemView.context, LinearLayoutManager.HORIZONTAL, false)
-//        holder.tagChipRecyclerView.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.HORIZONTAL)
         val tagAdapter = TagChipsAdapter(items[position].reviewFilterTags)
         holder.tagChipRecyclerView.adapter = tagAdapter
 
