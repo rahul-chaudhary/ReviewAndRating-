@@ -6,10 +6,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.reviewsandratings.adapters.RatingCircularPBarAdapter
 import com.example.reviewsandratings.adapters.ReviewCardAdapter
 import com.example.reviewsandratings.databinding.ActivityMainBinding
-import com.example.reviewsandratings.DummyReviewData.ratingMap
+import com.example.reviewsandratings.DummyReviewData.ratingProgressBarData
 import com.example.reviewsandratings.DummyReviewData.reviewCardList
 import com.example.reviewsandratings.DummyReviewData.tags
 import com.example.reviewsandratings.adapters.FilterChipsAdapter
+import com.example.reviewsandratings.models.RatingCPBarModel
 import com.example.reviewsandratings.models.ReviewCardModel
 
 class MainActivity : AppCompatActivity() {
@@ -24,9 +25,8 @@ class MainActivity : AppCompatActivity() {
         val progressRecyclerView = mbinding.ratingCircularProgressRecyclerView
         progressRecyclerView.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        val items = fetchRatingValueData()
-        val itemsTitle = fetchRatingValueTitleData()
-        val adapter: RatingCircularPBarAdapter = RatingCircularPBarAdapter(items, itemsTitle)
+        val items = fetchRatingData()
+        val adapter: RatingCircularPBarAdapter = RatingCircularPBarAdapter(items)
         progressRecyclerView.adapter = adapter
 
         //Card Data
@@ -48,15 +48,9 @@ class MainActivity : AppCompatActivity() {
         filterChipsRecyclerview.adapter = filterChipsAdapter
     }
 
-
-
-
-    private fun fetchRatingValueData(): ArrayList<Double> {
-        return ArrayList(ratingMap.values)
-    }
-
-    private fun fetchRatingValueTitleData(): ArrayList<String> {
-        return ArrayList(ratingMap.keys)
+//fetches rating data for rating progress bar recyclerview/adapter
+    private fun fetchRatingData(): ArrayList<RatingCPBarModel> {
+        return ratingProgressBarData
     }
 
     //fetch card data from DummyReviewData for review cards recyclerview/adapter

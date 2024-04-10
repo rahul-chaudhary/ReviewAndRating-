@@ -2,17 +2,28 @@ package com.example.reviewsandratings
 
 import android.util.Log
 import com.example.reviewsandratings.adapters.ReviewCardAdapter
+import com.example.reviewsandratings.models.RatingCPBarModel
 import com.example.reviewsandratings.models.ReviewCardModel
 
 object DummyReviewData {
-    val ratingMap: HashMap<String, Double> = hashMapOf(
-        "Ambience" to 4.5,
-        "Service" to 3.5,
-        "Food" to 5.0,
-        "Price" to 4.0,
-        "Cleanliness" to 3.0,
-        "Taste" to 4.5,
-        "Variety" to 3.5,
+//    val ratingMap: HashMap<String, Double> = hashMapOf(
+//        "Ambience" to 4.5,
+//        "Service" to 3.5,
+//        "Food" to 5.0,
+//        "Price" to 4.0,
+//        "Cleanliness" to 3.0,
+//        "Taste" to 4.5,
+//        "Variety" to 3.5,
+//    )
+
+    val ratingProgressBarData: ArrayList<RatingCPBarModel> = arrayListOf(
+        RatingCPBarModel(4.5, "Ambience"),
+        RatingCPBarModel(3.5, "Service"),
+        RatingCPBarModel(5.0, "Food"),
+        RatingCPBarModel(4.0, "Price"),
+        RatingCPBarModel(3.0, "Cleanliness"),
+        RatingCPBarModel(4.5, "Taste"),
+        RatingCPBarModel(3.5, "Variety")
     )
 
     val reviewCardList: ArrayList<ReviewCardModel> = arrayListOf(
