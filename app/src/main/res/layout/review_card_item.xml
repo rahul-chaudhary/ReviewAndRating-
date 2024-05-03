@@ -1,161 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
 
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginVertical="10dp"
         android:backgroundTint="@color/white"
         android:elevation="0dp"
         android:hapticFeedbackEnabled="true"
         android:outlineSpotShadowColor="@color/white"
         app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:strokeColor="@color/light_gray"
+
         app:strokeWidth="1dp">
 
-        <LinearLayout
-            android:id="@+id/parentLinearLayout"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginHorizontal="10dp"
-            android:orientation="vertical">
+            android:padding="10dp">
 
-            <LinearLayout
-                android:id="@+id/nameAndRating"
-                android:layout_width="match_parent"
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/horizontalBarrier"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="5dp"
-                android:orientation="horizontal"
+                app:barrierDirection="bottom" />
 
-                >
+            <!--            <androidx.cardview.widget.CardView-->
+            <!--                android:id="@+id/profile_image_card"-->
+            <!--                android:layout_width="45dp"-->
+            <!--                android:layout_height="45dp"-->
+            <!--                android:layout_margin="5dp"-->
+            <!--                app:layout_constraintHorizontal_bias="0.0"-->
+            <!--                android:elevation="5dp"-->
+            <!--                app:cardCornerRadius="30dp"-->
+            <!--                app:layout_constraintBottom_toTopOf="@id/horizontalBarrier"-->
+            <!--                app:layout_constraintEnd_toStartOf="@id/reviewerName"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toTopOf="parent"-->
+            <!--                >-->
+            <!--        </androidx.cardview.widget.CardView>-->
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_margin="5dp"
-                    android:elevation="5dp"
-                    app:cardCornerRadius="30dp">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/profile_image"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/eazydiner"
+                app:layout_constraintBottom_toTopOf="@id/horizontalBarrier"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/CircleProfileStyle" />
 
-                    <ImageView
-                        android:id="@+id/profile_image"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
+            <TextView
+                android:id="@+id/reviewerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:layout_weight="6"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:flow_horizontalBias="0.0"
+                app:layout_constraintBottom_toTopOf="@id/horizontalBarrier"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/profile_image"
+                app:layout_constraintTop_toTopOf="@+id/profile_image"
+                tools:text="Sourish Bhattacharya"
 
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/eazydiner" />
+                />
 
-                </androidx.cardview.widget.CardView>
-
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/reviewerRatingCard"
+                android:layout_width="40dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="0.1"
+                android:backgroundTint="@color/green"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toTopOf="@id/horizontalBarrier"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toEndOf="@id/reviewerName"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeWidth="0dp">
 
                 <TextView
-                    android:id="@+id/reviewerName"
+                    android:id="@+id/reviewerRating"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="6"
+                    android:layout_gravity="center"
+                    android:background="@color/green"
                     android:fontFamily="@font/poppins_medium"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    tools:text="Sourish Bhattacharya" />
-
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="40dp"
-                    android:layout_height="25dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="0.1"
-                    android:backgroundTint="@color/green"
-                    app:cardCornerRadius="10dp"
-                    app:strokeWidth="0dp">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:padding="3dp">
-
-                        <TextView
-                            android:id="@+id/reviewerRating"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@color/green"
-                            android:fontFamily="@font/poppins_medium"
-                            android:text="4.5"
-                            android:textColor="@color/white"
-                            android:textSize="12sp" />
-
-                        <ImageView
-                            android:layout_width="12dp"
-                            android:layout_height="12dp"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginStart="2dp"
-                            android:layout_marginBottom="1dp"
-                            android:background="@color/green"
-                            android:src="@drawable/baseline_star_24"
-
-                            />
-
-                    </LinearLayout>
+                    android:text="4.5"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:drawableEndCompat="@drawable/baseline_star_24" />
 
 
-                </com.google.android.material.card.MaterialCardView>
-            </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
 
             <TextView
                 android:id="@+id/timeAgo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="0dp"
                 android:fontFamily="@font/poppins_regular"
+                android:paddingVertical="5dp"
                 android:text="1 week ago"
                 android:textColor="@color/gray"
-                android:textSize="13sp" />
+                android:textSize="13sp"
+                app:layout_constraintBottom_toTopOf="@id/tagChipRecyclerView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/profile_image"
+                app:layout_constraintTop_toBottomOf="@id/horizontalBarrier"
+                app:layout_constraintVertical_bias="0.0"
+
+                />
 
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/tagChipRecyclerView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/timeAgo"
+                android:paddingBottom="10dp"
                 tools:listitem="@layout/tag_chip_item" />
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="20dp"
-                android:orientation="horizontal">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/dummyImage1"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/dummy_food_image"
+                android:scaleType="centerCrop"
+                android:src="@drawable/food1"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tagChipRecyclerView"
+                app:shapeAppearanceOverlay="@style/roundImageView" />
 
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/dummyImage2"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginStart="10dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/dummy_food_image"
+                android:scaleType="centerCrop"
+                android:src="@drawable/food2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/dummyImage1"
+                app:layout_constraintTop_toBottomOf="@+id/tagChipRecyclerView"
+                app:shapeAppearanceOverlay="@style/roundImageView" />
 
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:layout_width="150dp"
-                    android:layout_height="100dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:adjustViewBounds="true"
-                    android:contentDescription="@string/dummy_food_image"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/food1"
-                    app:shapeAppearanceOverlay="@style/roundImageView" />
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:layout_width="150dp"
-                    android:layout_height="100dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:adjustViewBounds="true"
-                    android:contentDescription="@string/dummy_food_image"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/food2"
-                    app:shapeAppearanceOverlay="@style/roundImageView" />
-
-            </LinearLayout>
 
             <TextView
                 android:id="@+id/reviewTitle"
@@ -163,8 +180,14 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
                 android:text="@string/recommended_dishes"
+                android:layout_marginTop="10dp"
                 android:textColor="@color/black"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dummyImage1"
+
+                />
 
             <TextView
                 android:id="@+id/reviewBody"
@@ -174,12 +197,14 @@
                 android:fontFamily="@font/poppins_regular"
                 android:text="Honey chilli potato, Lasagna"
                 android:textColor="@color/gray"
-                android:textSize="13sp" />
-
-        </LinearLayout>
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/reviewTitle" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </com.google.android.material.card.MaterialCardView>
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
