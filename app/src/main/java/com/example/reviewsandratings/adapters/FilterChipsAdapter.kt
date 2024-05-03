@@ -44,8 +44,6 @@ class FilterChipsAdapter(
             }
 
 
-//                holder.filterChipView.setChipBackgroundColorResource(R.color.white)
-
             val chipText = holder.filterChipView.text.toString()
             if (selectedChips.contains(chipText)) {
                 selectedChips.remove(chipText)

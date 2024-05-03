@@ -9,7 +9,6 @@ import com.google.android.material.chip.Chip
 
 class TagChipsAdapter(private val items: ArrayList<String>): RecyclerView.Adapter<TagChipsViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TagChipsViewHolder {
-//        val view = View.inflate(parent.context, R.layout.filter_chips_item, null)
         val view = LayoutInflater.from(parent.context).inflate(R.layout.tag_chip_item, parent, false)
         return TagChipsViewHolder(view)
     }

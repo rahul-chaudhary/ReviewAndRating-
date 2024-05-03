@@ -7,7 +7,6 @@ import com.example.reviewsandratings.adapters.RatingCircularPBarAdapter
 import com.example.reviewsandratings.adapters.ReviewCardAdapter
 import com.example.reviewsandratings.databinding.ActivityMainBinding
 import com.example.reviewsandratings.DummyReviewData.ratingProgressBarData
-import com.example.reviewsandratings.DummyReviewData.reviewCardList
 import com.example.reviewsandratings.DummyReviewData.tags
 import com.example.reviewsandratings.adapters.FilterChipsAdapter
 import com.example.reviewsandratings.models.RatingCPBarModel
