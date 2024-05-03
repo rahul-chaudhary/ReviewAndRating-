@@ -70,9 +70,7 @@
                 android:id="@+id/reviewerRatingCard"
                 android:layout_width="40dp"
                 android:layout_height="25dp"
-                android:layout_gravity="center_vertical"
                 android:layout_marginEnd="8dp"
-                android:layout_weight="0.1"
                 android:backgroundTint="@color/green"
                 app:cardCornerRadius="10dp"
                 app:layout_constraintBottom_toTopOf="@id/horizontalBarrier"
@@ -90,6 +88,8 @@
                     android:background="@color/green"
                     android:fontFamily="@font/poppins_medium"
                     android:text="@string/_4_5"
+                    android:drawablePadding="1dp"
+                    android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="12sp"
                     app:drawableEndCompat="@drawable/baseline_star_24" />
