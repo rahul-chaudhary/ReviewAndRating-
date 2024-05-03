@@ -18,11 +18,6 @@
         <item name = "cornerSize"> 5dp </item>
         <item name="color">@color/white</item>
     </style>
-    <style name="CircleProfileStyle" parent="">
-        <item name = "cornerFamily"> rounded </item>
-        <item name = "cornerSize"> 21dp </item>
-        <item name="color">@color/white</item>
-    </style>
 
     <style name="profileImageView" parent="">
         <item name = "cornerFamily"> rounded </item>
