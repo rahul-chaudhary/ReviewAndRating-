@@ -67,9 +67,10 @@ class FilterChipsAdapter(
         }
     }
     private fun updateReviewCardAdapter() {
-
-        reviewCardAdapter = ReviewCardAdapter(DummyReviewData.getFilteredReviewCardList())
-        reviewCardRecyclerView.adapter = reviewCardAdapter
+        CoroutineScope(Dispatchers.Main).launch {
+            reviewCardAdapter = ReviewCardAdapter(DummyReviewData.getFilteredReviewCardList())
+            reviewCardRecyclerView.adapter = reviewCardAdapter
+        }
     }
 }
 
