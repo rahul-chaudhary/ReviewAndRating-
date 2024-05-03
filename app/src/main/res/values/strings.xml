@@ -6,4 +6,5 @@
     <string name="recommended_dishes">Recommended Dishes</string>
     <string name="filters">Filters</string>
     <string name="tag">Tag</string>
+    <string name="back_navigation_button">Back navigation button</string>
 </resources>

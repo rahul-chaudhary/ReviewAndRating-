@@ -9,6 +9,7 @@
 
     <style name="CircularDeterminateProgressBar">
         <item name="android:indeterminateOnly">false</item>
+        <item name="android:padding">3dp</item>
         <item name="android:progressDrawable">@drawable/circle</item>
     </style>
 

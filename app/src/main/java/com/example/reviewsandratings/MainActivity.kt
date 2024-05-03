@@ -15,7 +15,6 @@ import com.example.reviewsandratings.models.ReviewCardModel
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mbinding: ActivityMainBinding
-//    private lateinit var Tagbinding: =
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mbinding = ActivityMainBinding.inflate(layoutInflater)

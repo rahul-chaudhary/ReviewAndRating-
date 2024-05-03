@@ -6,15 +6,6 @@ import com.example.reviewsandratings.models.RatingCPBarModel
 import com.example.reviewsandratings.models.ReviewCardModel
 
 object DummyReviewData {
-//    val ratingMap: HashMap<String, Double> = hashMapOf(
-//        "Ambience" to 4.5,
-//        "Service" to 3.5,
-//        "Food" to 5.0,
-//        "Price" to 4.0,
-//        "Cleanliness" to 3.0,
-//        "Taste" to 4.5,
-//        "Variety" to 3.5,
-//    )
 
     val ratingProgressBarData: ArrayList<RatingCPBarModel> = arrayListOf(
         RatingCPBarModel(4.5, "Ambience"),
@@ -30,7 +21,7 @@ object DummyReviewData {
         ReviewCardModel(
             "Mr. Marty Robbins",
             "https://www.google.com",
-            "12th June 2021",
+            "12th Jun 2021",
             "Great Food",
             "Delicious dishes with excellent flavors. Must try!",
             "4.7",
@@ -39,7 +30,7 @@ object DummyReviewData {
         ReviewCardModel(
             "Mr. Bill Withers",
             "https://www.google.com",
-            "12th June 2021",
+            "1st Jan 2020",
             "Cozy Ambience",
             "Warm atmosphere, perfect for a relaxing meal with friends.",
             "4.3",
@@ -48,7 +39,7 @@ object DummyReviewData {
         ReviewCardModel(
             "Mr. Johnny Cash",
             "https://www.google.com",
-            "12th June 2021",
+            "30th Apr 2024",
             "Friendly Staff",
             "Attentive service and helpful staff made the dining experience enjoyable.",
             "4.5",
@@ -57,7 +48,7 @@ object DummyReviewData {
         ReviewCardModel(
             "Mr. John Denver",
             "https://www.google.com",
-            "12th June 2021",
+            "15th Dec 2021",
             "Lovely Setting",
             "Charming decor and beautiful surroundings created a delightful dining ambiance.",
             "4.5",
@@ -66,7 +57,7 @@ object DummyReviewData {
         ReviewCardModel(
             "Mr. Paul Anka",
             "https://www.google.com",
-            "12th June 2021",
+            "22th Oct 2023",
             "Tasty Treats",
             "Mouthwatering menu items that satisfied every craving.",
             "3.9",
@@ -96,6 +87,5 @@ object DummyReviewData {
         return filteredReviewCardList
     }
 
-//    val filteredReviewCardList = getFilteredReviewCardList()
 
 }
