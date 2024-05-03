@@ -9,6 +9,10 @@ import com.example.reviewsandratings.DummyReviewData
 import com.example.reviewsandratings.DummyReviewData.selectedTags
 import com.example.reviewsandratings.R
 import com.google.android.material.chip.Chip
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
 
 
 class FilterChipsAdapter(
@@ -63,6 +67,7 @@ class FilterChipsAdapter(
         }
     }
     private fun updateReviewCardAdapter() {
+
         reviewCardAdapter = ReviewCardAdapter(DummyReviewData.getFilteredReviewCardList())
         reviewCardRecyclerView.adapter = reviewCardAdapter
     }

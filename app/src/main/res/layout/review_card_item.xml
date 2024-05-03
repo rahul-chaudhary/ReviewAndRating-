@@ -37,27 +37,30 @@
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/profile_image"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/eazydiner"
                 app:layout_constraintBottom_toTopOf="@id/horizontalBarrier"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.1"
                 app:shapeAppearanceOverlay="@style/CircleProfileStyle" />
 
             <TextView
                 android:id="@+id/reviewerName"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="10dp"
                 android:layout_weight="6"
                 android:fontFamily="@font/poppins_medium"
+                android:paddingEnd="5dp"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                app:flow_horizontalBias="0.0"
+                app:flow_horizontalBias="0.1"
                 app:layout_constraintBottom_toTopOf="@id/horizontalBarrier"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/profile_image"
@@ -68,8 +71,9 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/reviewerRatingCard"
-                android:layout_width="40dp"
+                android:layout_width="0dp"
                 android:layout_height="25dp"
+                app:layout_constraintDimensionRatio="2:1"
                 android:layout_marginEnd="8dp"
                 android:backgroundTint="@color/green"
                 app:cardCornerRadius="10dp"
@@ -82,17 +86,18 @@
 
                 <TextView
                     android:id="@+id/reviewerRating"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:background="@color/green"
+                    android:drawablePadding="1dp"
                     android:fontFamily="@font/poppins_medium"
                     android:text="@string/_4_5"
-                    android:drawablePadding="1dp"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="12sp"
-                    app:drawableEndCompat="@drawable/baseline_star_24" />
+                    app:drawableEndCompat="@drawable/baseline_star_24"
+                    />
 
 
             </com.google.android.material.card.MaterialCardView>
@@ -121,51 +126,55 @@
                 android:id="@+id/tagChipRecyclerView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/timeAgo"
-                android:paddingBottom="10dp"
                 tools:listitem="@layout/tag_chip_item" />
 
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/dummyImage1"
-                android:layout_width="150dp"
-                android:layout_height="100dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/dummy_food_image"
                 android:scaleType="centerCrop"
                 android:src="@drawable/food1"
+                app:layout_constraintDimensionRatio="3:2"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tagChipRecyclerView"
+                app:layout_constraintWidth_percent="0.4"
                 app:shapeAppearanceOverlay="@style/roundImageView" />
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/dummyImage2"
-                android:layout_width="150dp"
-                android:layout_height="100dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:layout_marginHorizontal="5dp"
                 android:layout_marginStart="10dp"
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/dummy_food_image"
                 android:scaleType="centerCrop"
                 android:src="@drawable/food2"
+                app:layout_constraintDimensionRatio="3:2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@id/dummyImage1"
                 app:layout_constraintTop_toBottomOf="@+id/tagChipRecyclerView"
+                app:layout_constraintWidth_percent="0.4"
                 app:shapeAppearanceOverlay="@style/roundImageView" />
 
 
             <TextView
                 android:id="@+id/reviewTitle"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/poppins_medium"
                 android:text="@string/recommended_dishes"
-                android:layout_marginTop="10dp"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -176,7 +185,7 @@
 
             <TextView
                 android:id="@+id/reviewBody"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="5dp"
                 android:fontFamily="@font/poppins_regular"

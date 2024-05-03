@@ -7,21 +7,4 @@
 
     <style name="Theme.ReviewsAndRatings" parent="Base.Theme.ReviewsAndRatings" />
 
-    <style name="CircularDeterminateProgressBar">
-        <item name="android:indeterminateOnly">false</item>
-        <item name="android:padding">3dp</item>
-        <item name="android:progressDrawable">@drawable/circle</item>
-    </style>
-
-    <style name="roundImageView" parent="">
-        <item name = "cornerFamily"> rounded </item>
-        <item name = "cornerSize"> 5dp </item>
-        <item name="color">@color/white</item>
-    </style>
-
-    <style name="profileImageView" parent="">
-        <item name = "cornerFamily"> rounded </item>
-        <item name = "cornerSize"> 30dp </item>
-        <item name="color">@color/white</item>
-    </style>
 </resources>
