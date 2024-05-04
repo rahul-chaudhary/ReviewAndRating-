@@ -41,12 +41,13 @@ class ReviewCardAdapter(private val items: ArrayList<ReviewCardModel>) : Recycle
         holder.imagesRecyclerView.layoutManager = LinearLayoutManager(holder.itemView.context, LinearLayoutManager.HORIZONTAL, false)
         val imagesAdapter = ImagesRVAdapter(currentItem.reviewImages)
         holder.imagesRecyclerView.adapter = imagesAdapter
-        imagesAdapter.onItemClick = {
-            val intent = Intent(holder.itemView.context, DetailImagesActivity::class.java)
-            intent.putExtra("Image_id", it)
-            //            val intent = Intent(holder.itemView.context, DetailImagesActivity::class.java)
-            startActivity(holder.itemView.context,intent, null)
-        }
+//        imagesAdapter.onItemClick = {
+//            val intent = Intent(holder.itemView.context, DetailImagesActivity::class.java)
+//            intent.putExtra("Image_id", it)
+//            //            val intent = Intent(holder.itemView.context, DetailImagesActivity::class.java)
+//            startActivity(holder.itemView.context,intent, null)
+//        }
+
     }
 }
 

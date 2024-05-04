@@ -1,15 +1,17 @@
 package com.example.reviewsandratings.adapters
 
+import android.content.Intent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.reviewsandratings.DetailImagesActivity
 import com.example.reviewsandratings.R
-import com.example.reviewsandratings.models.ReviewCardModel
 
 class ImagesRVAdapter(private val items: ArrayList<Int>) : RecyclerView.Adapter<ImagesViewHolder>() {
-    var onItemClick: ((Int) -> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImagesViewHolder {
         val view = View.inflate(parent.context, R.layout.images_rv_item, null)
         return ImagesViewHolder(view)
@@ -19,9 +21,10 @@ class ImagesRVAdapter(private val items: ArrayList<Int>) : RecyclerView.Adapter<
         val currentItem = items[position]
         holder.imgView.setImageResource(currentItem)
         holder.imgView.setOnClickListener {
-            Toast.makeText(holder.itemView.context, "Image $position clicked", Toast.LENGTH_SHORT).show()
-            onItemClick?.invoke(currentItem)
-
+            val cntxt = it.context
+            Toast.makeText(cntxt, "Image $position clicked", Toast.LENGTH_SHORT).show()
+            val intent = Intent(cntxt, DetailImagesActivity::class.java)
+            startActivity(cntxt , intent, null)
         }
     }
 
