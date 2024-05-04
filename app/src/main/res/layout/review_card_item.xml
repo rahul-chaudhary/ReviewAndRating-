@@ -88,7 +88,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:paddingHorizontal="5dp"
-
                     >
 
                     <TextView
@@ -157,6 +156,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/timeAgo"
                 tools:listitem="@layout/tag_chip_item" />
 
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/imagesRV"
                 android:layout_width="match_parent"
@@ -167,6 +167,7 @@
                 tools:itemCount="2"
                 tools:listitem="@layout/images_rv_item"
                 />
+
 
 
 
