@@ -14,5 +14,10 @@ class DetailImagesActivity : AppCompatActivity() {
         mbinding = ActivityDetailImagesBinding.inflate(layoutInflater)
         setContentView(mbinding.root)
 
+        val imageId = intent.getIntExtra("Image_id", 0)
+
+        // Set the image to the ImageView
+        mbinding.detailIV.setImageResource(imageId)
+
     }
 }

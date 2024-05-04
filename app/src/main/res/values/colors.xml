@@ -9,5 +9,6 @@
     <color name="gold">#FFD700</color>
     <color name="green">#038803</color>
     <color name="orange">#fd4513</color>
+    <color name="transparent_white">#00FFFFFF</color>
 
 </resources>

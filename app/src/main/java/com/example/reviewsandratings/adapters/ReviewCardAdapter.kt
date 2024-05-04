@@ -1,17 +1,21 @@
 package com.example.reviewsandratings.adapters
 
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.reviewsandratings.DetailImagesActivity
 import com.example.reviewsandratings.R
 import com.example.reviewsandratings.models.ReviewCardModel
 
 class ReviewCardAdapter(private val items: ArrayList<ReviewCardModel>) : RecyclerView.Adapter<ReviewCardViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ReviewCardViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.review_card_item, parent, false)
         return ReviewCardViewHolder(view)
@@ -37,6 +41,12 @@ class ReviewCardAdapter(private val items: ArrayList<ReviewCardModel>) : Recycle
         holder.imagesRecyclerView.layoutManager = LinearLayoutManager(holder.itemView.context, LinearLayoutManager.HORIZONTAL, false)
         val imagesAdapter = ImagesRVAdapter(currentItem.reviewImages)
         holder.imagesRecyclerView.adapter = imagesAdapter
+        imagesAdapter.onItemClick = {
+            val intent = Intent(holder.itemView.context, DetailImagesActivity::class.java)
+            intent.putExtra("Image_id", it)
+            //            val intent = Intent(holder.itemView.context, DetailImagesActivity::class.java)
+            startActivity(holder.itemView.context,intent, null)
+        }
     }
 }
 
@@ -51,6 +61,7 @@ class ReviewCardViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val tagChipRecyclerView: RecyclerView = itemView.findViewById(R.id.tagChipRecyclerView)
     //Images RecyclerView
     val imagesRecyclerView: RecyclerView = itemView.findViewById(R.id.imagesRV)
+
 
 
 
