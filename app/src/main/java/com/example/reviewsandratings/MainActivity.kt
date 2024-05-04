@@ -44,6 +44,8 @@ class MainActivity : AppCompatActivity() {
         val tagsItem = fetchTags()
         val filterChipsAdapter = FilterChipsAdapter(tagsItem, reviewCardAdapter, reviewCardRecyclerView)
         filterChipsRecyclerview.adapter = filterChipsAdapter
+
+
     }
 
 //fetches rating data for rating progress bar recyclerview/adapter

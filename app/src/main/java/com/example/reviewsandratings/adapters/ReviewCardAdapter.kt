@@ -20,15 +20,21 @@ class ReviewCardAdapter(private val items: ArrayList<ReviewCardModel>) : Recycle
     }
 
     override fun onBindViewHolder(holder: ReviewCardViewHolder, position: Int) {
-        val currentItem = items[position].reviewerName
-        holder.reviewerNameView.text = currentItem
-        holder.timeAgoView.text = items[position].reviewDate
-        holder.reviewTitleView.text = items[position].reviewTitle
-        holder.reviewBodyView.text = items[position].reviewDescription
-        holder.reviewRatingView.text = items[position].reviewRating
+        val currentItem = items[position]
+        holder.reviewerNameView.text = currentItem.reviewerName
+        holder.timeAgoView.text = currentItem.reviewDate
+        holder.reviewTitleView.text = currentItem.reviewTitle
+        holder.reviewBodyView.text = currentItem.reviewDescription
+        holder.reviewRatingView.text = currentItem.reviewRating
+        //tag chip RV
         holder.tagChipRecyclerView.layoutManager = LinearLayoutManager(holder.itemView.context, LinearLayoutManager.HORIZONTAL, false)
-        val tagAdapter = TagChipsAdapter(items[position].reviewFilterTags)
+        val tagAdapter = TagChipsAdapter(currentItem.reviewFilterTags)
         holder.tagChipRecyclerView.adapter = tagAdapter
+
+        //Images RV
+        holder.imagesRecyclerView.layoutManager = LinearLayoutManager(holder.itemView.context, LinearLayoutManager.HORIZONTAL, false)
+        val imagesAdapter = ImagesRVAdapter(currentItem.reviewImages)
+        holder.imagesRecyclerView.adapter = imagesAdapter
 
     }
 }
@@ -42,6 +48,8 @@ class ReviewCardViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     //Tag chip
     val tagChipRecyclerView: RecyclerView = itemView.findViewById<RecyclerView>(R.id.tagChipRecyclerView)
+    //Images RecyclerView
+    val imagesRecyclerView: RecyclerView = itemView.findViewById<RecyclerView>(R.id.imagesRV)
 
 
 

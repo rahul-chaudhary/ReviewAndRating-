@@ -25,7 +25,8 @@ object DummyReviewData {
             "Great Food",
             "Delicious dishes with excellent flavors. Must try!",
             "4.7",
-            arrayListOf("Ambience", "Price")
+            arrayListOf("Ambience", "Price"),
+            arrayListOf(R.drawable.food1, R.drawable.food2, R.drawable.food3)
         ),
         ReviewCardModel(
             "Mr. Bill Withers",
@@ -34,7 +35,8 @@ object DummyReviewData {
             "Cozy Ambience",
             "Warm atmosphere, perfect for a relaxing meal with friends.",
             "4.3",
-            arrayListOf("Service", "Cleanliness")
+            arrayListOf("Service", "Cleanliness"),
+            arrayListOf(R.drawable.food1, R.drawable.food2, R.drawable.food3)
         ),
         ReviewCardModel(
             "Mr. Johnny Cash",
@@ -43,7 +45,8 @@ object DummyReviewData {
             "Friendly Staff",
             "Attentive service and helpful staff made the dining experience enjoyable.",
             "4.5",
-            arrayListOf("Food", "Variety")
+            arrayListOf("Food", "Variety"),
+            arrayListOf(R.drawable.food1, R.drawable.food2, R.drawable.food3)
         ),
         ReviewCardModel(
             "Mr. John Denver",
@@ -52,7 +55,8 @@ object DummyReviewData {
             "Lovely Setting",
             "Charming decor and beautiful surroundings created a delightful dining ambiance.",
             "4.5",
-            arrayListOf("Ambience", "Taste", "Service")
+            arrayListOf("Ambience", "Taste", "Service"),
+            arrayListOf(R.drawable.food1, R.drawable.food2, R.drawable.food3)
         ),
         ReviewCardModel(
             "Mr. Paul Anka",
@@ -61,7 +65,8 @@ object DummyReviewData {
             "Tasty Treats",
             "Mouthwatering menu items that satisfied every craving.",
             "3.9",
-            arrayListOf("Price", "Cleanliness")
+            arrayListOf("Price", "Cleanliness"),
+            arrayListOf(R.drawable.food1, R.drawable.food2, R.drawable.food3)
         )
     )
 

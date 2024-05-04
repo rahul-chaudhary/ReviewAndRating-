@@ -7,5 +7,6 @@ data class ReviewCardModel(
     val reviewTitle: String,
     val reviewDescription: String,
     val reviewRating: String,
-    val reviewFilterTags: ArrayList<String>
+    val reviewFilterTags: ArrayList<String>,
+    val reviewImages: ArrayList<Int>
 )
