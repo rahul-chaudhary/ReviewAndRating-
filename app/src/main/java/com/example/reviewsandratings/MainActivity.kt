@@ -21,14 +21,13 @@ class MainActivity : AppCompatActivity() {
 
         //Rating Progress Bar Data
         mbinding.ratingCircularProgressRV.layoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)//        val items =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         mbinding.ratingCircularProgressRV.adapter = RatingCircularPBarAdapter(fetchRatingData())
 
         //Card Data
         val reviewCardRV = mbinding.reviewsCardsRV
         reviewCardRV.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-//        val reviewCardList = fetchCardData()
         val reviewCardAdapter = ReviewCardAdapter(fetchCardData())
         reviewCardRV.adapter = reviewCardAdapter
 
@@ -37,9 +36,8 @@ class MainActivity : AppCompatActivity() {
         val filterChipsRecyclerview = mbinding.filterChipsRecyclerView
         filterChipsRecyclerview.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        val tagsItem = fetchTags()
         val filterChipsAdapter =
-            FilterChipsAdapter(tagsItem, reviewCardAdapter, reviewCardRV)
+            FilterChipsAdapter(fetchTags(), reviewCardAdapter, reviewCardRV)
         filterChipsRecyclerview.adapter = filterChipsAdapter
 
 
