@@ -22,8 +22,7 @@ class FilterChipsAdapter(
     RecyclerView.Adapter<FilterChipsViewHolder>() {
     private val selectedChips = arrayListOf<String>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FilterChipsViewHolder {
-        val view = View.inflate(parent.context, R.layout.filter_chips_item, null)
-        return FilterChipsViewHolder(view)
+        return FilterChipsViewHolder(View.inflate(parent.context, R.layout.filter_chips_item, null))
     }
 
     override fun getItemCount(): Int {
@@ -67,8 +66,7 @@ class FilterChipsAdapter(
     }
     private fun updateReviewCardAdapter() {
         CoroutineScope(Dispatchers.Main).launch {
-            reviewCardAdapter = ReviewCardAdapter(DummyReviewData.getFilteredReviewCardList())
-            reviewCardRecyclerView.adapter = reviewCardAdapter
+            reviewCardRecyclerView.adapter = ReviewCardAdapter(DummyReviewData.getFilteredReviewCardList())
         }
     }
 }
