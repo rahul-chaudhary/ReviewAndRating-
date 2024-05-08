@@ -16,7 +16,11 @@ object DummyReviewData {
         RatingCPBarModel(4.5, "Taste"),
         RatingCPBarModel(3.5, "Variety")
     )
-
+    val foodImagesList: ArrayList<Int> = arrayListOf(
+        R.drawable.food1,
+        R.drawable.food2,
+        R.drawable.food3
+    )
     val reviewCardList: ArrayList<ReviewCardModel> = arrayListOf(
         ReviewCardModel(
             "Mr. Marty Robbins",
@@ -26,7 +30,7 @@ object DummyReviewData {
             "Delicious dishes with excellent flavors. Must try!",
             "4.7",
             arrayListOf("Ambience", "Price"),
-            arrayListOf(R.drawable.food1, R.drawable.food2, R.drawable.food3)
+            foodImagesList
         ),
         ReviewCardModel(
             "Mr. Bill Withers",
@@ -36,7 +40,7 @@ object DummyReviewData {
             "Warm atmosphere, perfect for a relaxing meal with friends.",
             "4.3",
             arrayListOf("Service", "Cleanliness"),
-            arrayListOf(R.drawable.food1, R.drawable.food2, R.drawable.food3)
+            foodImagesList
         ),
         ReviewCardModel(
             "Mr. Johnny Cash",
@@ -46,7 +50,7 @@ object DummyReviewData {
             "Attentive service and helpful staff made the dining experience enjoyable.",
             "4.5",
             arrayListOf("Food", "Variety"),
-            arrayListOf(R.drawable.food1, R.drawable.food2, R.drawable.food3)
+            foodImagesList
         ),
         ReviewCardModel(
             "Mr. John Denver",
@@ -56,7 +60,7 @@ object DummyReviewData {
             "Charming decor and beautiful surroundings created a delightful dining ambiance.",
             "4.5",
             arrayListOf("Ambience", "Taste", "Service"),
-            arrayListOf(R.drawable.food1, R.drawable.food2, R.drawable.food3)
+            foodImagesList
         ),
         ReviewCardModel(
             "Mr. Paul Anka",
@@ -66,7 +70,7 @@ object DummyReviewData {
             "Mouthwatering menu items that satisfied every craving.",
             "3.9",
             arrayListOf("Price", "Cleanliness"),
-            arrayListOf(R.drawable.food1, R.drawable.food2, R.drawable.food3)
+            foodImagesList
         )
     )
 

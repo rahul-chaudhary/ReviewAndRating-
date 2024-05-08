@@ -72,7 +72,7 @@
             android:textColor="@color/black"
             android:textSize="60sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@id/ratingCircularProgressRecyclerView"
+            app:layout_constraintBottom_toTopOf="@id/ratingCircularProgressRV"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -110,7 +110,7 @@
             app:layout_constraintTop_toBottomOf="@id/ratingBar" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/ratingCircularProgressRecyclerView"
+            android:id="@+id/ratingCircularProgressRV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="8dp"
@@ -133,7 +133,7 @@
             app:layout_constraintBottom_toTopOf="@id/filterChipsRecyclerView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ratingCircularProgressRecyclerView" />
+            app:layout_constraintTop_toBottomOf="@id/ratingCircularProgressRV" />
 
 
         <androidx.recyclerview.widget.RecyclerView

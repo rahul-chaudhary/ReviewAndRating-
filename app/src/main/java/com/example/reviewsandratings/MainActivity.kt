@@ -20,12 +20,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(mbinding.root)
 
         //Rating Progress Bar Data
-        val progressRecyclerView = mbinding.ratingCircularProgressRecyclerView
-        progressRecyclerView.layoutManager =
+        mbinding.ratingCircularProgressRV.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         val items = fetchRatingData()
-        val adapter: RatingCircularPBarAdapter = RatingCircularPBarAdapter(items)
-        progressRecyclerView.adapter = adapter
+        mbinding.ratingCircularProgressRV.adapter = RatingCircularPBarAdapter(items)
 
         //Card Data
         val reviewCardRecyclerView = mbinding.reviewsCardsRecyclerView
@@ -36,19 +34,19 @@ class MainActivity : AppCompatActivity() {
         reviewCardRecyclerView.adapter = reviewCardAdapter
 
 
-
         //Filter Chips Recyclerview
         val filterChipsRecyclerview = mbinding.filterChipsRecyclerView
         filterChipsRecyclerview.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         val tagsItem = fetchTags()
-        val filterChipsAdapter = FilterChipsAdapter(tagsItem, reviewCardAdapter, reviewCardRecyclerView)
+        val filterChipsAdapter =
+            FilterChipsAdapter(tagsItem, reviewCardAdapter, reviewCardRecyclerView)
         filterChipsRecyclerview.adapter = filterChipsAdapter
 
 
     }
 
-//fetches rating data for rating progress bar recyclerview/adapter
+    //fetches rating data for rating progress bar recyclerview/adapter
     private fun fetchRatingData(): ArrayList<RatingCPBarModel> {
         return ratingProgressBarData
     }
