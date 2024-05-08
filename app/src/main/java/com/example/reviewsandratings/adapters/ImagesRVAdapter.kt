@@ -13,18 +13,16 @@ import com.example.reviewsandratings.R
 class ImagesRVAdapter(private val items: ArrayList<Int>) : RecyclerView.Adapter<ImagesViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImagesViewHolder {
-        val view = View.inflate(parent.context, R.layout.images_rv_item, null)
-        return ImagesViewHolder(view)
+        return ImagesViewHolder(View.inflate(parent.context, R.layout.images_rv_item, null))
     }
 
     override fun onBindViewHolder(holder: ImagesViewHolder, position: Int) {
         val currentItem = items[position]
         holder.imgView.setImageResource(currentItem)
         holder.imgView.setOnClickListener {
-            val cntxt = it.context
-            Toast.makeText(cntxt, "Image $position clicked", Toast.LENGTH_SHORT).show()
-            val intent = Intent(cntxt, DetailImagesActivity::class.java)
-            startActivity(cntxt , intent, null)
+            Toast.makeText(it.context, "Image $position clicked", Toast.LENGTH_SHORT).show()
+            val intent = Intent(it.context, DetailImagesActivity::class.java)
+            startActivity(it.context , intent, null)
         }
     }
 
