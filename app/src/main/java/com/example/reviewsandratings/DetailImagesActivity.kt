@@ -15,9 +15,7 @@ class DetailImagesActivity : AppCompatActivity() {
         setContentView(mbinding.root)
 
         //setting the viewPager2
-        val viewPager2 = mbinding.viewPager2
-        viewPager2.orientation = ViewPager2.ORIENTATION_HORIZONTAL
-        val viewPager2Adapter = DetailImageAdapter(DummyReviewData.foodImagesList)
-        viewPager2.adapter = viewPager2Adapter
+        mbinding.viewPager2.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+        mbinding.viewPager2.adapter = DetailImageAdapter(DummyReviewData.foodImagesList)
     }
 }
