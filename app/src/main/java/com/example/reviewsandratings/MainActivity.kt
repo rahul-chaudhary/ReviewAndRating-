@@ -26,12 +26,9 @@ class MainActivity : AppCompatActivity() {
         mbinding.ratingCircularProgressRV.adapter = RatingCircularPBarAdapter(items)
 
         //Card Data
-        val reviewCardRecyclerView = mbinding.reviewsCardsRecyclerView
-        reviewCardRecyclerView.layoutManager =
+        mbinding.reviewsCardsRV.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-//        val reviewCardList = fetchCardData()
-        val reviewCardAdapter = ReviewCardAdapter(fetchCardData())
-        reviewCardRecyclerView.adapter = reviewCardAdapter
+        mbinding.reviewsCardsRV.adapter = ReviewCardAdapter(fetchCardData())
 
 
         //Filter Chips Recyclerview
