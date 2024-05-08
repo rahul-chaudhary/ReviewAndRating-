@@ -33,11 +33,9 @@ class MainActivity : AppCompatActivity() {
 
 
         //Filter Chips Recyclerview
-        val filterChipsRecyclerview = mbinding.filterChipsRecyclerView
-        filterChipsRecyclerview.layoutManager =
+        mbinding.filterChipsRV.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-
-        filterChipsRecyclerview.adapter = FilterChipsAdapter(fetchTags(), reviewCardAdapter, reviewCardRV)
+        mbinding.filterChipsRV.adapter = FilterChipsAdapter(fetchTags(), reviewCardAdapter, reviewCardRV)
 
 
     }
