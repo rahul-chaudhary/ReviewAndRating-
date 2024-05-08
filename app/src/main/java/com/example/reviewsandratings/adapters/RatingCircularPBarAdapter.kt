@@ -17,9 +17,11 @@ class RatingCircularPBarAdapter(val items: ArrayList<RatingCPBarModel>) :
         parent: ViewGroup,
         viewType: Int
     ): RatingCircularPBarViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.rating_circular_progress_bar_item, parent, false)
-        return RatingCircularPBarViewHolder(view)
+
+        return RatingCircularPBarViewHolder(
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.rating_circular_progress_bar_item, parent, false)
+        )
     }
 
     override fun getItemCount(): Int {
@@ -28,11 +30,10 @@ class RatingCircularPBarAdapter(val items: ArrayList<RatingCPBarModel>) :
 
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onBindViewHolder(holder: RatingCircularPBarViewHolder, position: Int) {
-        val ratingValue = items[position].rating
-        val ratingTitle = items[position].title
-        val ratingProgressBar = ratingValue / 5 * 100
-        holder.ratingValueView.text = ratingValue.toString()
-        holder.ratingTitleView.text = ratingTitle
+        val currentPos = items[position]
+        val ratingProgressBar = currentPos.rating / 5 * 100
+        holder.ratingValueView.text = currentPos.rating.toString()
+        holder.ratingTitleView.text = currentPos.title
 
         //Call requires API level 24 (current min is 21): android.widget.ProgressBar#setProgress
         holder.ratingProgressBarView.setProgress(ratingProgressBar.toInt(), false)
