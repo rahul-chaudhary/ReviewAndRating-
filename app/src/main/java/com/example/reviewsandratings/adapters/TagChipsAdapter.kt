@@ -9,8 +9,7 @@ import com.google.android.material.chip.Chip
 
 class TagChipsAdapter(private val items: ArrayList<String>): RecyclerView.Adapter<TagChipsViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TagChipsViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.tag_chip_item, parent, false)
-        return TagChipsViewHolder(view)
+        return TagChipsViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.tag_chip_item, parent, false))
     }
 
     override fun getItemCount(): Int {
@@ -24,5 +23,5 @@ class TagChipsAdapter(private val items: ArrayList<String>): RecyclerView.Adapte
 }
 
 class TagChipsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    val tagChipView: Chip = itemView.findViewById<Chip>(R.id.tagChip)
+    val tagChipView: Chip = itemView.findViewById(R.id.tagChip)
 }
